@@ -1,0 +1,11 @@
+{
+  "city_name": "Harborview",
+  "population": 482000,
+  "regions": 6,
+  "health_priorities": [
+    "heat stress",
+    "sleep disruption",
+    "behavioral health access",
+    "opioid recovery support"
+  ]
+}

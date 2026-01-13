@@ -1,0 +1,39 @@
+{
+  "_hnc_consent_layer": "L1_personal",
+  "_hnc_domain": "sensitive.mental_health",
+  "narrative_summary": "Over the last 30 days, self-reported stress increased relative to baseline, coinciding with a medication change event.",
+  "attention_flags": [
+    {
+      "level": "yellow",
+      "what_changed": "Average stress score increased from 4 to 7",
+      "baseline": "Previous 90-day average",
+      "confidence": "medium",
+      "unknowns": "Sleep quality not reported consistently",
+      "optional_next_steps": [
+        "Review recent routine changes",
+        "Consider discussing stress patterns with a clinician"
+      ]
+    }
+  ],
+  "med_context": {
+    "med_ref_tokens": [
+      {
+        "token_id": "medtok_demo_01",
+        "token_type": "med_change_event",
+        "issued_at": "2026-01-05T12:00:00Z",
+        "scope": {
+          "allowed_domains": [
+            "sensitive.mental_health"
+          ],
+          "allowed_layers": [
+            "L1_personal"
+          ]
+        },
+        "coarse_attributes": {
+          "change_kind": "dose_changed",
+          "class_hint": "sleep_aid"
+        }
+      }
+    ]
+  }
+}

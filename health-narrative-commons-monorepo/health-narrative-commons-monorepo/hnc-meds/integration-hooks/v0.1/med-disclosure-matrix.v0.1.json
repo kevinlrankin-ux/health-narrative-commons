@@ -1,0 +1,70 @@
+{
+  "version": "v0.1",
+  "defaults": [
+    {
+      "layer": "L1_personal",
+      "domain": "general",
+      "allowed_fields": [
+        "med_identity",
+        "dose_and_sig",
+        "prescriber_identity",
+        "pharmacy_identity",
+        "controlled_substance_flags"
+      ],
+      "notes": "Optional fields may be disabled by implementation."
+    },
+    {
+      "layer": "L1_personal",
+      "domain": "sensitive.mental_health",
+      "allowed_fields": [
+        "coarse_attributes_only"
+      ],
+      "notes": "med_identity and dose_and_sig require explicit MedDisclosureView enablement."
+    },
+    {
+      "layer": "L1_personal",
+      "domain": "sensitive.substance_use",
+      "allowed_fields": [
+        "coarse_attributes_only"
+      ],
+      "notes": "med_identity and dose_and_sig require explicit MedDisclosureView enablement."
+    },
+    {
+      "layer": "L2_aggregate",
+      "domain": "general",
+      "allowed_fields": [
+        "none"
+      ],
+      "notes": "Implementations may optionally allow coarse_attributes_only, but must prevent re-identification."
+    },
+    {
+      "layer": "L2_aggregate",
+      "domain": "sensitive.*",
+      "allowed_fields": [
+        "none"
+      ],
+      "notes": "Strict default."
+    },
+    {
+      "layer": "L3_research",
+      "domain": "general",
+      "allowed_fields": [
+        "coarse_attributes_only"
+      ],
+      "notes": "med_identity allowed only under documented study governance and must pass conformance checks."
+    },
+    {
+      "layer": "L3_research",
+      "domain": "sensitive.*",
+      "allowed_fields": [
+        "none"
+      ],
+      "notes": "Strict default."
+    }
+  ],
+  "global_constraints": {
+    "no_reidentification": true,
+    "k_anonymity_recommended": true,
+    "no_med_fingerprint_outputs": true
+  }
+}

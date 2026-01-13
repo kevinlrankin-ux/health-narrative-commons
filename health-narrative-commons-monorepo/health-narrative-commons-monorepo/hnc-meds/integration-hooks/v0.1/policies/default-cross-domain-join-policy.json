@@ -1,0 +1,14 @@
+{
+  "policy_id": "default_cross_domain_join_v0.1",
+  "default_fields_allowed": [
+    "none"
+  ],
+  "sensitive_domain_overrides": {
+    "sensitive.mental_health": [
+      "coarse_attributes_only"
+    ],
+    "sensitive.substance_use": [
+      "coarse_attributes_only"
+    ]
+  }
+}

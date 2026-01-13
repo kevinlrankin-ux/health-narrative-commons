@@ -1,0 +1,10 @@
+{
+  "_hnc_consent_layer": "L2_aggregate",
+  "_hnc_domain": "sensitive.substance_use",
+  "population_summary": "Across the cohort, recovery stability signals remained mostly stable, with a modest increase in medication-related change events.",
+  "aggregate_metrics": {
+    "participants_included": 312,
+    "med_change_event_count": 47
+  },
+  "notes": "Medication events are represented as tokenized change counts only. No medication identities are included."
+}

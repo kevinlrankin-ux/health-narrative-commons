@@ -1,0 +1,13 @@
+{
+  "_hnc_consent_layer": "L2_aggregate",
+  "_hnc_domain": "sensitive.substance_use",
+  "population_summary": "Aggregate recovery stability trends remain consistent with prior periods.",
+  "aggregate_metrics": {
+    "participants_included": 309,
+    "med_change_event_count": 42
+  },
+  "exclusions": {
+    "reason": "Sensitive-domain consent revoked",
+    "count": 3
+  }
+}

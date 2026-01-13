@@ -1,0 +1,9 @@
+{
+  "L1_personal_only": 0.61,
+  "L2_aggregate_opt_in": 0.32,
+  "L3_research_opt_in": 0.07,
+  "sensitive_domain_opt_in_rates": {
+    "mental_health": 0.18,
+    "substance_use": 0.11
+  }
+}

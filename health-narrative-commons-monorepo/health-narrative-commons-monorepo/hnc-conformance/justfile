@@ -1,0 +1,19 @@
+default:
+  @just test
+
+test:
+  @echo "→ Running all HNC conformance tests"
+  just test-sensitive
+  just test-meds
+  @echo "✔ All HNC conformance tests passed"
+
+test-sensitive:
+  @echo "→ Sensitive-domain governance tests"
+  python tests/v0.1/test_sensitive_domain_conformance.py
+
+test-meds:
+  @echo "→ Medication disclosure matrix enforcement"
+  python tests/v0.1/test_med_disclosure_matrix_enforcement.py
+
+clean:
+  rm -rf artifacts/outputs/*.json
