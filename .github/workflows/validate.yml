@@ -8,10 +8,29 @@ jobs:
   validate:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Run validation
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Diagnostics
         shell: pwsh
         run: |
-          Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-          .\scripts\validate.ps1
-          .\scripts\conformance-check.ps1
+          Write-Host "Runner OS:"; \System.Collections.Hashtable.OS
+          Write-Host "PowerShell:"; \System.Collections.Hashtable.PSVersion
+          Write-Host "PWD:"; (Get-Location).Path
+          Write-Host "Repo files:"; Get-ChildItem -Force | Format-Table -AutoSize
+          Write-Host "Scripts folder:"; Get-ChildItem -Force .\scripts | Format-Table -AutoSize
+
+      - name: Init (best-effort)
+        shell: pwsh
+        run: |
+          pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\init.ps1
+
+      - name: Validate
+        shell: pwsh
+        run: |
+          pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\validate.ps1
+
+      - name: Conformance Check
+        shell: pwsh
+        run: |
+          pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\conformance-check.ps1
