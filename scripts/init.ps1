@@ -1,18 +1,10 @@
-﻿Write-Host "Initializing Health Narrative Commons repo..." -ForegroundColor Cyan
+﻿# =========================================================
+# EXIT CONTRACT (CI-SAFE)
+#
+# exit 0 = pass
+# exit 2 = warning / scaffold incomplete (non-blocking)
+# exit 1 = hard failure (structural error)
+# =========================================================
 
-$requiredDirs = @(
-  "docs",
-  "scripts",
-  "conformance",
-  "modules",
-  "infra"
-)
+try {
 
-foreach ($dir in $requiredDirs) {
-  if (-not (Test-Path $dir)) {
-    New-Item -ItemType Directory -Path $dir | Out-Null
-    Write-Host "Created $dir" -ForegroundColor Green
-  }
-}
-
-Write-Host "Initialization complete." -ForegroundColor Green

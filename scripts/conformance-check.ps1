@@ -1,8 +1,10 @@
-﻿Write-Host "Running Conformance Check (scaffold)..." -ForegroundColor Cyan
-Write-Host "✔ Conformance surface exists: conformance/README.md" -ForegroundColor Green
-Write-Host "✔ Jurisdiction template exists: conformance/jurisdictions/TEMPLATE.md" -ForegroundColor Green
-Write-Host "✔ AI module exists: modules/ai/README.md" -ForegroundColor Green
-Write-Host "✔ Architecture doc exists: docs/architecture.md" -ForegroundColor Green
-Write-Host ""
-Write-Host "NOTE: This is a scaffold check, not a compliance certification." -ForegroundColor Yellow
-Write-Host "Conformance check complete." -ForegroundColor Green
+﻿# =========================================================
+# EXIT CONTRACT (CI-SAFE)
+#
+# exit 0 = pass
+# exit 2 = warning / scaffold incomplete (non-blocking)
+# exit 1 = hard failure (structural error)
+# =========================================================
+
+try {
+
